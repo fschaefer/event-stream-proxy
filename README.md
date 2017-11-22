@@ -1,9 +1,9 @@
-# event-stream proxy
+# event-stream-proxy
 event-stream-proxy is a open reverse proxy allowing you to poll JSON REST APIs and push updates to clients by utilizing [Server-Sent Events](http://www.w3schools.com/html/html5_serversentevents.asp) (SSE), heavily inspired by [Streamdata.io](https://streamdata.io/) 
 
 ## Features
   - Incremental data updates: depending on selected operation mode, only changed data is sent to clients via JSON-Patch [(RFC6902)](http://tools.ietf.org/html/rfc6902)
-  - Push: updates are pushed to the client using Server-Sent Events (SSE). By providing fallback mechanisms this also works with older browsers.
+  - Push: updates are pushed to the client using Server-Sent Events (SSE). By providing [fallback](https://github.com/Yaffle/EventSource) mechanisms this also works with older browsers.
   - Transparent: all query parameters and (some) HTTP headers are passed through to the upstream server.
   - Configurable: either by environment variables or per request via special HTTP headers
 
