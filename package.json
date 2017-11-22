@@ -1,0 +1,42 @@
+{
+  "name": "event-stream-proxy",
+  "version": "1.0.0",
+  "description": "A proxy tool that converts standard API requests into a streaming API",
+  "main": "index.js",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/npm/npm.git"
+  },
+  "dependencies": {
+    "console-stamp": "^0.2.5",
+    "fast-json-patch": "^2.0.6",
+    "request": "^2.83.0",
+    "uuid": "^3.1.0",
+    "xstream": "^11.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.31",
+    "typescript": "^2.5.2",
+    "pkg": "^4.2.5"
+  },
+  "config": {
+    "HOSTNAME": "127.0.0.1",
+    "PORT": "3001",
+    "MODE": "patch",
+    "PING_INTERVAL": "20",
+    "REFRESH_INTERVAL": "10",
+    "PASS_HEADERS": "auth-header,authorization"
+  },
+  "scripts": {
+    "build": "./node_modules/typescript/bin/tsc",
+    "package": "pkg . -t node7-linux-x64,node7-linux-x86",
+    "start": "node .",
+    "start-x86": "./event-stream-proxy-x86",
+    "start-x64": "./event-stream-proxy-x64",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf index.js event-stream-proxy-x64 event-stream-proxy-x86 node_modules"
+  },
+  "bin": "index.js",
+  "author": "Florian Schäfer <florian.schaefer@securepoint.de>",
+  "license": "ISC"
+}
