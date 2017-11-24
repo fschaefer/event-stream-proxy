@@ -106,7 +106,7 @@ let doRequest = (url: string, headers?: any) => {
 }
 
 const hostname  = process.env.npm_package_config_HOSTNAME || "127.0.0.1"
-const port      = process.env.npm_package_config_PORT     || 3000
+const port      = process.env.npm_package_config_PORT     || 3001
 
 http.createServer((req: any, res: any) => {
 
